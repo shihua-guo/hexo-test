@@ -24,7 +24,7 @@ date: 2017.02.15 18:18:09
 
 - a HTML page.-HTML文件
 
-####导入.jh文件命令：
+#### 导入.jh文件命令：
 ```
 yo jhipster:import-jdl my_file1.jh my_file2.jh
 
@@ -33,7 +33,7 @@ jhipster-uml my_file1.jh my_file2.jh
 
 *导入多个文件用空格隔开，需要把对应文件放在项目的根目录，不然会报错，说在根目录找不到对应jh文件。*
 
-#####JDL实体示例：
+##### JDL实体示例：
 ```
 entity <entity name> {
   <field name> <type> [<validation>*]
@@ -45,7 +45,7 @@ entity <entity name> {
 -   <type> 字段类型（需要jHipster支持的类型）
 -   <validation> 字段的验证（是否为空，长度限制，正则等）
 
-#####例子：
+##### 例子：
 ```
 entity A
 
@@ -109,7 +109,7 @@ D实体包含：
 | ImageBlob | ImageBlob |   | *required, minbytes, maxbytes* |
 | TextBlob | TextBlob |   | *required, minbytes, maxbytes*  |
 
-#####关系示例：
+##### 关系示例：
 ```
 relationship (OneToMany | ManyToOne | OneToOne | ManyToMany) {
   <from entity>[{<relationship name>}] to <to entity>[{<relationship name>}]
@@ -124,7 +124,7 @@ relationship (OneToMany | ManyToOne | OneToOne | ManyToMany) {
 
 - `<relationship name>` 关联另一方的那个字段
 
-######同时可以在一个关系类型里面添加多个关系
+###### 同时可以在一个关系类型里面添加多个关系
 
 ```
 entity A
@@ -141,7 +141,7 @@ relationship ManyToMany {
 }
 ```
 
-######默认会关联ID字段。如果需要关联其他字段，那么在实体后的括号内加，如下：
+###### 默认会关联ID字段。如果需要关联其他字段，那么在实体后的括号内加，如下：
 
 ```
 entity A {
@@ -179,7 +179,7 @@ enum Language {
 *   ImageBlob 意味着存放图片的字段.
 *   TextBlob 存放长文本的字段.
 
-#####各种关系的前台和数据库的体现如下：
+##### 各种关系的前台和数据库的体现如下：
 
 例子:
 ```
@@ -213,7 +213,7 @@ service C with serviceImpl
 ```
 目前我只知道分页的方式其他不懂。
 
-#####分页的表现
+##### 分页的表现
   ![image](/img/java/44.webp "点击查看原始大小图片")
 
 - NO：对应如下，有多少数据就显示多少：
