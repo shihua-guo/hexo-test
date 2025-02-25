@@ -3,6 +3,7 @@ title: 【硬件】小米路由器MINI刷潘多拉
 categories: 硬件
 tags: 小米路由器
 date: 2019.02.25 22:02:19
+pin: true
 ---
 #### 小米路由器MINI刷潘多拉教程
 ##### 刷入开发版，以开启SSH

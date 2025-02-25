@@ -108,3 +108,18 @@ deploy:
   repo: git@github.com:shihua-guo/shihua-guo.github.io.git
   branch: master
   message: "Site update: {{ now('YYYY-MM-DD HH:mm:ss') }}"
+
+giscus:
+  enable: true
+  repo: shihua-guo/shihua-guo.github.io  # 你的 GitHub 仓库
+  repo_id: MDEwOlJlcG9zaXRvcnk2NTY1MTc0OA==  # 从 giscus.app 复制
+  category: Announcements  # 你的 Discussions 分类
+  category_id: DIC_kwDOA-nEJM4CnTEI  # 从 giscus.app 复制
+  mapping: pathname
+  strict: 0
+  reactions_enabled: 1
+  emit_metadata: 0
+  input_position: bottom
+  theme: preferred_color_scheme
+  lang: zh-CN
+  crossorigin: anonymous

@@ -3,6 +3,7 @@ title: 【java】Java WSDL 服务调用入门分享
 categories: 后端
 tags: 后端
 date: 2019.10.03 07:39:14
+pin: true
 ---
 ## Java WSDL 服务调用入门分享
 

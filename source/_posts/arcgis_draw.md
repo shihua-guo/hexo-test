@@ -3,7 +3,7 @@ title: 【arcgis】基于事件实现Arcgis绘制功能
 categories: 前端
 tags: arcgis
 date: 2019.01.15 19:26:06
-
+pin: true
 ---
 > Arcgis JavaScript Api 3.23、Typescript
 

@@ -3,6 +3,7 @@ title: 【java】从一个经典案例分析线程可见性
 date:  2022-11-04 16:01:00
 tags: 后端
 categories: 后端
+pin: true
 ---
 ## 从一个经典案例分析线程可见性
 
