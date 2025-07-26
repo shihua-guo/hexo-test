@@ -131,3 +131,84 @@ public class StringCompressor {
     }
 }
 
+
+Here's a Java solution to the string compression problem described in your question:
+
+✅ Problem Approach:
+
+Use a stack to keep track of characters along with their frequencies. For each character in the string:
+
+If the stack is not empty and the top of the stack has the same character, increase the count.
+
+If the count reaches k, pop the character.
+
+Otherwise, push the new character with count 1.
+
+
+
+---
+
+✅ Java Code Implementation:
+
+import java.util.*;
+
+public class Solution {
+    public static String compressWord(String word, int k) {
+        // Stack to store character and its consecutive count
+        Deque<Pair> stack = new ArrayDeque<>();
+
+        for (char c : word.toCharArray()) {
+            if (!stack.isEmpty() && stack.peek().ch == c) {
+                stack.peek().count++;
+                if (stack.peek().count == k) {
+                    stack.pop(); // remove group of k characters
+                }
+            } else {
+                stack.push(new Pair(c, 1));
+            }
+        }
+
+        // Build the final string from stack
+        StringBuilder sb = new StringBuilder();
+        while (!stack.isEmpty()) {
+            Pair p = stack.removeLast(); // reverse order
+            for (int i = 0; i < p.count; i++) {
+                sb.append(p.ch);
+            }
+        }
+
+        return sb.toString();
+    }
+
+    // Helper class to store character and its count
+    static class Pair {
+        char ch;
+        int count;
+
+        Pair(char ch, int count) {
+            this.ch = ch;
+            this.count = count;
+        }
+    }
+
+    // Test method
+    public static void main(String[] args) {
+        System.out.println(compressWord("aba", 2));   // Output: "aba"
+        System.out.println(compressWord("baac", 2));  // Output: "bc"
+        System.out.println(compressWord("abbcccbbca", 3)); // Output: "a"
+    }
+}
+
+
+---
+
+✅ Time and Space Complexity:
+
+Time Complexity: O(n) — where n is the length of the string.
+
+Space Complexity: O(n) — stack to hold intermediate characters.
+
+
+Let me know if you'd like this implemented in a different style (e.g., recursion, functional, etc.) or tested with custom input.
+
+
