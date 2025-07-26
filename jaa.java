@@ -83,3 +83,51 @@ class Solution {
  "abbcccbb", k=3  → 先删 ccc 得 "abbbb" ，再删3个 b 得 "a" 
 
 此实现满足题目要求，能够高效处理最长10^5的字符串，符合题目约束条件。
+
+    import java.util.LinkedList;
+
+public class StringCompressor {
+    public static String compressWord(String word, int k) {
+        if (k <= 1) return ""; // k>=2 per constraints
+        
+        // 用链表存储字符和对应的连续计数
+        LinkedList<Character> charList = new LinkedList<>();
+        LinkedList<Integer> countList = new LinkedList<>();
+        
+        for (char c : word.toCharArray()) {
+            // 当前字符与链表尾字符相同
+            if (!charList.isEmpty() && charList.getLast() == c) {
+                int newCount = countList.removeLast() + 1; // 增加计数
+                
+                if (newCount == k) {
+                    charList.removeLast(); // 达到k个，移除字符
+                } else {
+                    countList.addLast(newCount); // 未达到k，更新计数
+                }
+            } else {
+                // 添加新字符和初始计数1
+                charList.addLast(c);
+                countList.addLast(1);
+            }
+        }
+        
+        // 构建结果字符串
+        StringBuilder result = new StringBuilder();
+        while (!charList.isEmpty()) {
+            char c = charList.removeFirst();
+            int count = countList.removeFirst();
+            for (int i = 0; i < count; i++) {
+                result.append(c);
+            }
+        }
+        return result.toString();
+    }
+
+    // 测试样例
+    public static void main(String[] args) {
+        System.out.println(compressWord("aba", 2));    // "aba"
+        System.out.println(compressWord("baac", 2));   // "bc"
+        System.out.println(compressWord("abbcccb", 3)); // "a"
+    }
+}
+
